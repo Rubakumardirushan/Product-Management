@@ -50,7 +50,7 @@ class productcontroller extends Controller
 
             $product->save();
 
-            return redirect('/create')->with('status', 'Product has been added successfully');
+            return redirect()->route('products.create')->with('status', 'Product has been added successfully');
         }
     }
 

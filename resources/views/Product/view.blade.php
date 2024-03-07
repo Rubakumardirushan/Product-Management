@@ -24,7 +24,7 @@
             @foreach ($products as $product)
                 <div class="col-md-4">
                     <div class="card mb-4">
-                        <img src="{{ asset('images/' . $product->image) }}" class="card-img-top" alt="{{ $product->name }}">
+                        <img  src="{{ asset('images/' . $product->image) }}" class="card-img-top" alt="{{ $product->name }}">
                         <div class="card-body">
                             <h6 class="card-title">Name: {{ $product->name }}</h6>
                             <p class="card-text">Description:  {{ $product->description }}</p>

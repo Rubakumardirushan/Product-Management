@@ -60,6 +60,11 @@
 
                         <button type="submit" class="btn btn-primary btn-block">Upload</button>
                     </form>
+
+                    <!-- View Page Button -->
+                    <div class="mt-3">
+                        <a href="{{ route('products.show') }}" class="btn btn-secondary btn-block">View Page</a>
+                    </div>
                 </div>
             </div>
         </div>
