@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-
-
+Route::get('/create', [ProductController::class, 'ProductUploadForm']);
+Route::post('/products', [ProductController::class, 'ProductUploader'])->name('products.store');
+Route::get('/View', [ProductController::class, 'index']);
+Route::get('/update/{product}', [ProductController::class, 'updateview'])->name('products.updateview');
+Route::put('/update/{product}', [ProductController::class, 'updated'])->name('products.update');
