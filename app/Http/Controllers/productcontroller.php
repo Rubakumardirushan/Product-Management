@@ -55,7 +55,7 @@ class productcontroller extends Controller
     }
 
 
-    public function index()
+    public function showproduct()
     {
         $products = Product::all();
         return view('Product.view', compact('products'));
@@ -87,20 +87,19 @@ class productcontroller extends Controller
         return redirect()->route('products.updateview', ['product' => $product->id])->with('success', 'Product updated successfully');
     }
 
-public function deleteview(Product $product){
-    $products = Product::all();
-    return view('Product.delete', compact('products'));
-}
-
-public function destroy(Product $product)
-{
-    try {
-        $product->delete();
-        return redirect()->route('products.delete')->with('success', 'Product deleted successfully.');
-    } catch (\Exception $e) {
-        return redirect()->route('products.delete')->with('error', 'Error deleting product: ' . $e->getMessage());
+    public function deleteview(Product $product)
+    {
+        $products = Product::all();
+        return view('Product.delete', compact('products'));
     }
-}
 
-
+    public function destroy(Product $product)
+    {
+        try {
+            $product->delete();
+            return redirect()->route('products.delete')->with('success', 'Product deleted successfully.');
+        } catch (\Exception $e) {
+            return redirect()->route('products.delete')->with('error', 'Error deleting product: ' . $e->getMessage());
+        }
+    }
 }

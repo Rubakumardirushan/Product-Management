@@ -17,6 +17,7 @@
             <tr>
                 <th>Name</th>
                 <th>Description</th>
+                <th>Price</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -25,6 +26,7 @@
                 <tr>
                     <td>{{ $product->name }}</td>
                     <td>{{ $product->description }}</td>
+                    <td>{{$product->price}}/=</td>
                     <td>
                         <form  method="POST" action="{{route('products.destroy',$product->id)}}">
                             @csrf
